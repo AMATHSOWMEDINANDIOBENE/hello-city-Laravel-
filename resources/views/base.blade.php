@@ -54,6 +54,9 @@
         </div>
     </nav>
     @yield('content')
+    {{ env('APP_NAME') }}
+    
+    {{ config('projet.slogan')}}
     <footer>
         <p>&copy:Copyright{{ date('Y') }} &middot; <a href="/index">HOME1</a></p>
     </footer>
