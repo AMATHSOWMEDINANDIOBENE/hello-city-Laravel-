@@ -7,6 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
     <title>@yield('title')</title>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
 
 </head>
 
@@ -53,14 +54,17 @@
             </div>
         </div>
     </nav>
-    @yield('content')
-    {{ env('APP_NAME') }}
+    <main role="main" class="py-6 flex flex-col items-center justify-between min-h-screen">
+         @yield('content')
+    </main>
+   
+    {{-- {{ env('APP_NAME') }} --}}
 
-    {{ config('projet.slogan')}}
-    <footer>
-        <p>&copy:Copyright{{ date('Y') }}
+    {{-- {{ config('projet.slogan')}} --}}
+    <footer class="flex flex-col items-center justify-between min-h-screen">
+        <p class="text-gray-400">&copy:Copyright{{ date('Y') }}
         @if (! Route::is('home1'))
-            &middot; <a href="{{route('home1')}}">HOME1</a></p>
+            &middot; <a href="{{route('home1')}}" class="text-indigo-500 hover:text-indigo-600 underline">HOME1</a></p>
         @endif
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
